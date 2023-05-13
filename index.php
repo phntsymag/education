@@ -16,14 +16,26 @@ $user_data = check_login($con);
 </head>
 
 <body>
+	<nav>
+		<ul>
+			<li></li>
+			<li></li>
+		</ul>
+	</nav>
+	<section>
+		<h1></h1>
+	</section>
 	<div><strong>Hello, <?php echo $user_data['user_name']; ?></strong><br>
 
-		<h3>This is the index page</h3><br>
-		<p>See the <a href="gallery.html">Gallery</a></p>
-		<p>Read the <a href="blog.html">Blog</a></p>
+		<h3>This is the main page</h3><br>
+		<p>See the <a href="gallery.html" class="link">Gallery</a></p>
+		<p> Read the <a href="blog.html">Blog</a></p>
 		<a href="logout.php">Logout</a>
 		<br>
 	</div>
+	<article>
+
+	</article>
 	<footer><a href="sitemap.html">site map</a></footer>
 </body>
 
@@ -54,8 +66,20 @@ $user_data = check_login($con);
 		width: 300px;
 		height: 100px;
 		text-align: center;
+		color: aqua;
+
 
 	}
+
+	p,
+	h3 {
+		color: burlywood;
+	}
+
+	a:hover {
+		color: darkorange;
+	}
 </style>
+
 
 </html>

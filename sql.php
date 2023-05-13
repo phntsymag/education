@@ -35,6 +35,11 @@ $myHTML .= "</tbody></table>";
     <title>List of users</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style type="text/css">
+        html,
+        body {
+            background-color: black;
+        }
+
         body {
             font: 16px monospace;
         }
@@ -42,6 +47,13 @@ $myHTML .= "</tbody></table>";
         .wrapper {
             width: 350px;
             padding: 20px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
         }
     </style>
 </head>
@@ -56,8 +68,7 @@ $myHTML .= "</tbody></table>";
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="todolist.html">To Do List</a></li>
-                <li><a href="#">Page 3</a></li>
+
             </ul>
         </div>
     </nav>
@@ -76,7 +87,7 @@ $myHTML .= "</tbody></table>";
             </div>
         </div>
     </div>
-
+    <img src="war_of_the_worlds_.png" alt="alliens" class="center">
     <div class="container">
         <ul class="pagination">
             <li><a href="#">1</a></li>
@@ -87,21 +98,8 @@ $myHTML .= "</tbody></table>";
         </ul>
     </div>
 
-    <div class="container">
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
-    </div>
-
-    <div class="container">
-        <img class="img-responsive" src=https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/01/31/14/panda-bamboo.jpg alt="Panda" width="80" height="60">
-    </div>
-    <div class="database">
-        <!-- <?php
-                echo " $color, $fruit"; ?> -->
-        <div>
 
 </body>
+
 
 </html>

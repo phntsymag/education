@@ -3,7 +3,9 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
+
 }
+
 a,
 .galleryThumbnails img {
 	transition: all 150ms linear;
@@ -11,13 +13,16 @@ a,
 	-moz-transition: all 150ms linear;
 
 }
+
 .galleryContainer {
 	margin: 40px auto;
 	width: 900px;
 }
+
 .galleryPreviewContainer {
 	position: relative;
 }
+
 .galleryPreviewImage img {
 	display: none;
 	border-radius: 30px;
@@ -27,16 +32,18 @@ a,
 	position: relative;
 	top: 0;
 	left: 0;
-	
+
 }
+
 img.previewImage1 {
 	display: block;
-	
+
 }
+
 .galleryPreviewArrows a {
 	font-family: Arial;
 	font-size: 30px;
-	background: rgba(0,0,0, 0.3);
+	background: rgba(0, 0, 0, 0.3);
 	width: 70px;
 	height: 70px;
 	line-height: 70px;
@@ -52,22 +59,27 @@ img.previewImage1 {
 	top: 50%;
 	margin-top: -35px;
 }
+
 a.nextSlideArrow {
 	right: 20px;
 	left: auto;
 }
+
 .galleryPreviewArrows a:hover {
 	background: #000;
 	margin-top: -40px;
 }
+
 .galleryNavigationBullets {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 60px;
 }
+
 .galleryNavigationBullets span {
 	display: none;
 }
+
 .galleryNavigationBullets a {
 	width: 20px;
 	height: 20px;
@@ -75,10 +87,12 @@ a.nextSlideArrow {
 	margin-right: 5px;
 	background: #ddd;
 }
+
 .galleryNavigationBullets a:hover,
 .galleryNavigationBullets a.active {
 	background: #555;
 }
+
 .galleryThumbnailsContainer {
 	width: 900px;
 	overflow-x: auto;
@@ -86,9 +100,11 @@ a.nextSlideArrow {
 	margin-bottom: 40px;
 	padding: 20px 0;
 }
+
 .galleryThumbnails {
 	width: 2000px;
 }
+
 .galleryThumbnails img {
 	border-radius: 20px;
 	-webkit-border-radius: 20px;
@@ -98,13 +114,20 @@ a.nextSlideArrow {
 	position: relative;
 	top: 0;
 }
+
 .galleryThumbnails a:hover img {
 	top: -5px;
 	border: 4px solid #999;
 }
+
 .galleryThumbnails a.active img {
 	border: 4px solid #F00;
 }
-html{
+
+html {
 	background-color: antiquewhite;
+}
+
+li:hover {
+	color: #af1818;
 }
