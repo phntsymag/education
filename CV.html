@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Curriculum Vitae</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		function functionAlert(msg, myYes) {
+			var confirmBox = $("#confirm");
+			confirmBox.find(".message").text(msg);
+			confirmBox.find(".yes").unbind().click(function () {
+				confirmBox.hide();
+			});
+			confirmBox.find(".yes").click(myYes);
+			confirmBox.show();
+		}
+	</script>
+	<style>
+		#confirm {
+			display: none;
+			background-color: #0e6793;
+			border-radius: 12px;
+			color: #000000;
+			border: 3px solid #8d0d0d;
+			position: fixed;
+			width: 300px;
+			height: 100px;
+			left: 40%;
+			top: 40%;
+			box-sizing: border-box;
+			text-align: center;
+			opacity: 0.5;
+		}
+
+		#confirm button {
+			background-color: #5c6c78;
+			display: inline-block;
+			border-radius: 12px;
+			border: 3px solid #b61717;
+			padding: 5px;
+			text-align: center;
+			width: 60px;
+			cursor: pointer;
+		}
+
+		#confirm .message {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body style="background-image: linear-gradient(to bottom right,#1d8c5a, rgb(38, 155, 191)">
+
+	<h1>Curriculum Vitae</h1>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/SunFlower.jpg" alt="My Photo" width="110" height="130"
+		display: inline-block>
+	<p><em>Name: Dagmar Achsova</em></p>
+	<p><em>email: achsovadagmar@gmail.com</em></p>
+
+	<h2>Study</h2>
+	<ul>
+		<li>High school: Business Academy Imricha Karvasa, Bratislava - Banking Vocational Training (banking, economics,
+			accounting, typing)</li>
+		<li>University: University of Economics Bratislava (Faculty of Economic Informatics) - one year</li>
+
+		<li>Another studies: Comenius University - State exams of English language (one year), French course / beginner
+			(two years)</li>
+		<li>Woman Tester Academy - Tester certificate (2023)</li>
+	</ul>
+
+	<h2>Work Experience</h2>
+
+	<u> 2000 - 2022 - Social Insurance Institution, head office</u>
+
+	<p>Department of Pension Benefits - Officer</p>
+
+	<p>Job description:</p>
+	<ul>
+		<li>assessment of pension benefit claims to support the decision making process</li>
+		<li>calculations and identification of missing facts</li>
+		<li>assessing documents, checking data, comunicating with clients, institutions, branches</li>
+		<li>knowledge of social security and related legislation, internal instructions</li>
+	</ul>
+
+	<p>Department of Pension Benefits- Foreign Affairs - Officer</p>
+	<p>Job description:</p>
+	<ul>
+		<li>clerical work + assessment of claims for pension benefits with a foreign element - EU countries, USA, Canada
+			+ 10 more</li>
+		<li>induction, consultation, referals</li>
+		<li>appeals, preparing documents for the legal department and court proceeding</li>
+	</ul>
+
+	<p>Department of Pension Benefits- Foreign Affairs - Approver</p>
+	<p>Job description:</p>
+	<ul>
+		<li>auditing the work of referees, guiding their work, consulting, mentoring, helping and completing the work of
+			referees</li>
+	</ul>
+
+	<u> 2022 - now Slovak Trade Inspection</u>
+	<p>Job description</p>
+	<ul>
+		<li>data analyst - work with Excel, data nanipulation, creating reports</li>
+		<li>webeditor - creating content on website</li>
+		<li>creating methodological guidelines</li>
+	</ul>
+
+
+	<h2>Another Skills</h2>
+	<ul>
+		<li>basics of SQL, Python, JavaScript, HTML, CSS, PHP</li>
+		<li>knowledge of some basics of Penetration Testing, Encrypting, Hashing, Hacking, Linux, Git, Vim, Bash, R,
+			Machine Learning, Data
+			Manipulation and Visualization with Python, Matplotlib, XML</li>
+		<li>working with Github, Visual Studio Code, PHPMyAdmin, MySQL, MariaDB, Dbeaver, Notepad++</li>
+		<li>playing with Power BI</li>
+		<li>experience with testing applications like Postman, Selenium, Jira, Testrail</li>
+		<li>english language (c1)</li>
+		<li>basics of German and Spanish Language</li>
+
+	</ul>
+	<h3>Hobbies</h3>
+	<p>Climbing, hiking, biking; music, movies; learning languages, solving puzzles, making photos </p>
+
+	<h3>Links</h3>
+	<a href="https://phntsymag.github.io/education/">MyGithub</a>
+	<a href="https://www.linkedin.com/in/dagmar-achsova">LinkedIn profile</a>
+
+	<div id="confirm">
+		<div class="message">My phone number is.... 0903 540 016</div><br>
+		<button class="yes">I will call</button>
+	</div>
+	<input type="radio" value=":" onclick="functionAlert();" />
+</body>
+
+</html>
