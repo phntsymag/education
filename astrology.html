@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Astrology Sign Generator</title>
+    <style>
+        #container {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="index.html">1</a>
+  <a href="blog.html" class="active">2</a>
+  <a href="CV.html">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+    <div id="container">
+        <h1>Astrology Sign Generator</h1>
+        <label for="astroSign">Enter your astrology sign:</label>
+		<select name="astrosign" id="astroSign">
+			<option value="aries">Aries</option>
+			<option value="taurus">Taurus</option>
+			<option value="gemini">Gemini</option>
+			<option value="cancer" selected>Cancer</option>
+			<option value="gemini">Gemini</option>
+			<option value="leo">Leo</option>
+			<option value="virgo">Virgo</option>
+			<option value="libra">Libra</option>
+			<option value="scorpio">Scorpio</option>
+			<option value="sagittarius">Sagittarius</option>
+			<option value="capricorn">Capricorn</option>
+			<option value="aquarius">Aquarius</option
+			<option value="pisces">Pisces</option>
+		</select>
+        
+        <br>
+        <button onclick="generateDescription()">Generate</button>
+        <br>
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        // Define astrology traits as a JavaScript object
+        const astrologyTraits = {
+            "Aries": "Courageous, energetic, and confident.",
+            "Taurus": "Patient, reliable, and practical.",
+            "Gemini": "Adaptable, curious, and witty.",
+            "Cancer": "Loyal, emotional, and nurturing.",
+            "Leo": "Generous, confident, and charismatic.",
+            "Virgo": "Analytical, practical, and modest.",
+            "Libra": "Charming, diplomatic, and sociable.",
+            "Scorpio": "Determined, passionate, and resourceful.",
+            "Sagittarius": "Adventurous, optimistic, and enthusiastic.",
+            "Capricorn": "Responsible, disciplined, and patient.",
+            "Aquarius": "Innovative, friendly, and open-minded.",
+            "Pisces": "Compassionate, artistic, and intuitive."
+        };
+
+        function generateDescription() {
+            const astroSignInput = document.getElementById("astroSign");
+            const answerDisplay = document.getElementById("answer");
+            const sign = astroSignInput.value.trim().toLowerCase().capitalize(); // Custom capitalize function
+
+            if (astrologyTraits.hasOwnProperty(sign)) {
+                const description = astrologyTraits[sign];
+                answerDisplay.textContent = `${sign.capitalize()}: ${description}`;
+            } else {
+                answerDisplay.textContent = "Invalid astrology sign.";
+            }
+        }
+
+        // Custom capitalize function
+        String.prototype.capitalize = function () {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        };
+    </script>
+</body>
+<style>
+    html {
+        background-color: rgb(63, 127, 11);
+       
+    }
+
+    h1 {
+        text-decoration: underline;
+    }
+</style>
+</html>
