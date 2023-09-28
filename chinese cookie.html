@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Cookie</title>
+	<link rel = "icon" href = "favhappy.png" type = "image/x-icon">
+    <style>
+	    html{
+		    background-color: #AA381E;
+		}
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            font-size: 16px;	
+			color: black;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+			border-radius: 50%;
+			font-weight: bold;
+			color: black;
+			border: 2px solid black;
+            font-family: 'Sofia';
+			
+        }
+	
+        #message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+		h1 {
+		   font-family: 'Sofia';font-size: 22px;
+		}
+    </style>
+</head>
+<body>
+    <h1>Click a Cookie</h1>
+    <button id="button1" style="background-color: yellow; color: black;">Love</button>
+    <button id="button2" style="background-color: green; color: black;">Health</button>
+    <button id="button3" style="background-color: #6495ED; color: black;">Wealth</button>
+    <div id="message"></div>
+
+    <script>
+        // Array of 20 Chinese happy cookie messages with English translations
+        const happyCookieMessages = [
+            "好运常伴你左右。 (Good luck always be with you.)",
+            "幸福如影随形。 (Happiness follows you like a shadow.)",
+            "笑口常开，好运常来。 (Keep smiling, and good luck will come.)",
+            "愿你一切顺利如意。 (May everything go smoothly and as you wish.)",
+            "心想事成，万事如意。 (May your heart's desires come true, and everything goes well.)",
+            "快乐多多，烦恼少少。 (Lots of joy, few worries.)",
+            "幸福永远伴随。 (May happiness be with you forever.)",
+            "事事顺心如意。 (May everything go your way and as you wish.)",
+            "好运连连，笑口不断。 (Good luck time and time again, and may your smile never fade.)",
+            "生活充满阳光和快乐。 (May your life be filled with sunshine and happiness.)",
+            "美梦成真，幸福满满。 (May your dreams come true, and your happiness be abundant.)",
+            "天天好心情。 (Have a good mood every day.)",
+            "好运无限，快乐多多。 (Infinite luck and lots of happiness.)",
+            "微笑是最美的风景。 (A smile is the most beautiful scenery.)",
+            "好运常驾到。 (Good luck is always arriving.)",
+            "平安幸福每一天。 (Peace and happiness every day.)",
+            "生活充满欢笑。 (May life be filled with laughter.)",
+            "愿你幸福快乐永驻。 (May your happiness and joy reside forever.)",
+            "健康快乐每一天。 (Health and happiness every day.)",
+            "心想事成，笑口常开。 (May your heart's desires come true, and may you always have a smiling face.)"
+        ];
+
+        // Function to pick a random message from the array
+        function getRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * happyCookieMessages.length);
+            return happyCookieMessages[randomIndex];
+        }
+
+        // Event listeners for each button
+        document.getElementById("button1").addEventListener("click", () => {
+            const message = getRandomMessage();
+            document.getElementById("message").textContent = message;
+        });
+
+        document.getElementById("button2").addEventListener("click", () => {
+            const message = getRandomMessage();
+            document.getElementById("message").textContent = message;
+        });
+
+        document.getElementById("button3").addEventListener("click", () => {
+            const message = getRandomMessage();
+            document.getElementById("message").textContent = message;
+        });
+    </script>
+</body>
+</html>
