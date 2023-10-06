@@ -141,15 +141,80 @@
 	<p>Climbing, hiking, biking; music, movies; learning languages, solving puzzles, making photos </p>
 
 	<h3>Links</h3>
-	<a href="https://github.com/phntsymag">My Github</a>
+	<div class="center"></div><a href="https://github.com/phntsymag">My Github</a>
 	<a href="https://phntsymag.github.io/education/">My pages</a>
-	<a href="https://www.linkedin.com/in/dagmar-achsova">LinkedIn profile</a>
+	<a href="https://www.linkedin.com/in/dagmar-achsova">LinkedIn profile</a></div>
 
 	<div id="confirm">
 		<div class="message">My phone number is.... 0903 540 016. Will you call me?</div><br>
 		<button class="yes">YES</button>
 	</div>
 	<input type="radio" value=":" onclick="functionAlert();" />
+	<canvas class="center" width="578" height="200"  margin="3px" id="targer" style="border: 1px solid black;"></canvas>
+	<script>
+   var canvas = document.getElementById('targer');
+
+  function bugObj(x, y, size) { 
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.update = function(move) {
+            var p = Math.floor((Math.random()*3)-1) + this.x;
+            var q = Math.floor((Math.random()*3)-1) + this.y;
+            if (p > canvas.width) { p = canvas.width };
+            if (p < 0)   { p = 0 };
+            if (q > canvas.height) { q = canvas.height };
+            if (q < 0)   { q = 0 };
+
+            this.x = p;
+            this.y = q;
+        }
+        return this;
+    }
+
+    function popBugs(){
+        var bug;                
+        var ctv = canvas.getContext('2d');  
+        ctv.fillStyle = 'black';
+        ctv.fillRect(0, 0, canvas.width, canvas.height);
+        for(var i = 0; bug = bugs[i]; i++) {                
+            ctv.fillStyle = 'yellow';
+            ctv.fillRect (bug.x, bug.y, bug.size, bug.size);                
+        }
+
+    }
+
+    var bugs = [],
+        numberbugs = 100,
+        x,y;
+
+    for (var i = 0; i < numberbugs; i++){
+        x = Math.random()*canvas.width;
+        y = Math.floor(Math.random()*canvas.height);
+        bugs.push(new bugObj(x, y, 2)); 
+    }
+
+    function loop() {
+
+        /// update each bugs objects
+        for(var i = 0;i < bugs.length; i++) bugs[i].update();           
+
+        popBugs();
+
+        requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.requestAnimationFrame = (function(){
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+              function( callback ){
+                window.setTimeout(callback, 1000);
+              };
+    })(); 
+	</script>
 </body>
 
 </html>
