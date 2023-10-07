@@ -16,14 +16,14 @@
         }
         button {
             font-size: 16px;	
-			color: black;
+	    color: black;
+	    background-image: linear-gradient(to right, red, orange, yellow, green, violet);
             padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-			border-radius: 50%;
-			font-weight: bold;
-			color: black;
-			border: 2px solid black;
+	    margin: 10px;
+            border-radius: 50%;
+	    font-weight: bold;
+	    cursor: pointer;
+	    border: 2px solid black;
             font-family: 'Sofia';
 			
         }
@@ -31,10 +31,16 @@
         #message {
             font-size: 18px;
             margin-top: 20px;
+	    background-image: linear-gradient(to bottom right, red, yellow);
         }
 		h1 {
 		   font-family: 'Sofia';font-size: 22px;
 		}
+	img {
+	position: absolute;
+	top: 50%;
+	left: 37%;
+	}
     </style>
 </head>
 <body>
@@ -52,7 +58,7 @@
     <button id="button2" style="background-color: green; color: black;">Health</button>
     <button id="button3" style="background-color: #6495ED; color: black;">Wealth</button>
     <div id="message"></div>
-
+    <img src="chinese cat.jpg" alt="pic" weight= 200px height= 200px>
     <script>
         // Array of 20 Chinese happy cookie messages with English translations
         const happyCookieMessages = [
