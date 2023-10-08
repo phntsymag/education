@@ -19,13 +19,15 @@
         }
 
       .opening-text {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        white-space: nowrap;
-        font-size: 24px;
-        }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 24px;
+      opacity: 0; /* Initial opacity set to 0 */
+      transition: opacity 2s ease-in-out; /* Transition duration: 2s (adjust as needed) */
+    }
         
         img {
 		position: absolute;
@@ -36,6 +38,7 @@
                text-align: center; /* Center the pagination links */
                margin-top: 20px;  
          }
+
     </style>
 	
 </head>
@@ -78,7 +81,7 @@
              i++;
              setTimeout(addText, speed);
             } else {
-            setTimeout(fadeOut, 1000); // Wait for 1 second before starting the fade out
+            setTimeout(fadeOut, 3000); // Wait for 3 seconds before starting the fade out
              }
            }
 
@@ -90,7 +93,7 @@
          }
 
 
-        const openingText = "A long time ago in a galaxy far, far away...a war has begun";
+        const openingText = "A long time ago in a galaxy far, far away...a war has begun...";
         const typingSpeed = 100; // Adjust speed as needed
 
         starWarsOpeningText(openingText, typingSpeed);
