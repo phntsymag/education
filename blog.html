@@ -7,8 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel = "icon" href = "favtree.png" type = "image/x-icon">
-</head>
+    <style>
+    html {
+        background-color: lightgreen;
+        background-image: linear-gradient(to bottom right, lightgreen, rgb(63, 127, 11));
+    }
 
+    h4 {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+  <script>
+    function goBack() {
+      // Use the history object to navigate back
+      history.back();
+    }
+  </script>
 <body>
 <div class="pagination">
   <a href="#">&laquo;</a>
@@ -41,17 +57,9 @@
          </ol>
         <img src="comet.jpg" style="width:50px;height:60px;" alt="">
     </div>
-</body>
-<a href="index.html">Back</a>
-<style>
-    html {
-        background-color: lightgreen;
-        background-image: linear-gradient(to bottom right, lightgreen, rgb(63, 127, 11));
-    }
+    <a href="javascript:history.back()">Back</a>
 
-    h4 {
-        text-decoration: underline;
-    }
-</style>
+</body>
+
 
 </html>
