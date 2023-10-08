@@ -19,15 +19,17 @@
         }
 
       .opening-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      font-size: 24px;
-      opacity: 0; /* Initial opacity set to 0 */
-      transition: opacity 2s ease-in-out; /* Transition duration: 2s (adjust as needed) */
-    }
+ 	 position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  white-space: nowrap;
+	  font-size: 24px;
+	  opacity: 0; /* Initial opacity set to 0 */
+	  visibility: hidden; /* Hide the element */
+	  transition: opacity 2s ease-in-out, visibility 2s ease-in-out; /* Transition duration: 2s (adjust as needed) */
+	}
+
         
         img {
 		position: absolute;
