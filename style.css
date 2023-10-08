@@ -131,3 +131,7 @@ html {
 li:hover {
 	color: #af1818;
 }
+.pagination {
+        text-align: center; /* Center the pagination links */
+        margin-top: 20px;  
+         }
