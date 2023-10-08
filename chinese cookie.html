@@ -7,13 +7,13 @@
     <title>Happy Cookie</title>
 	<link rel = "icon" href = "favhappy.png" type = "image/x-icon">
     <style>
-	    html{
-		    background-color: #AA381E;
+	html{
+	    background-color: #AA381E;
 		}
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-        }
+             }
         button {
             font-size: 16px;	
 	    color: black;
@@ -25,22 +25,21 @@
 	    cursor: pointer;
 	    border: 2px solid black;
             font-family: 'Sofia';
-			
-        }
+	     }
 	
         #message {
             font-size: 18px;
             margin-top: 20px;
 	    background-image: linear-gradient(to bottom right, red, yellow);
-        }
-		h1 {
-		   font-family: 'Sofia';font-size: 22px;
+             }
+	h1 {
+	   font-family: 'Sofia';font-size: 22px;
+	   }
+	.center{
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
 		}
-	img {
-	position: absolute;
-	top: 50%;
-	left: 37%;
-	}
     </style>
 </head>
 <body>
@@ -54,11 +53,11 @@
   <a href="#">&raquo;</a>
 </div>
     <h1>Click a Cookie</h1>
-    <button id="button1" style="background-color: yellow; color: black;">Love</button>
-    <button id="button2" style="background-color: green; color: black;">Health</button>
-    <button id="button3" style="background-color: #6495ED; color: black;">Wealth</button>
+    <button id="button1" >Love</button>
+    <button id="button2" >Health</button>
+    <button id="button3" >Wealth</button>
     <div id="message"></div>
-    <img src="chinese cat.jpg" alt="pic" weight= 200px height= 200px>
+    <img src="chinese cat.jpg" alt="pic" weight= 200px height= 200px class="center">
     <script>
         // Array of 20 Chinese happy cookie messages with English translations
         const happyCookieMessages = [
