@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galaxy</title>
-	<link rel = "icon" href = "favhappy.png" type = "image/x-icon">
+	<link rel = "icon" href = "favgalaxy.png" type = "image/x-icon">
     <style>
 	html{
 	  	background-color: black;
@@ -60,60 +60,60 @@
 	
 
 	
-   <script>
-    function changeImage(image) {
-        image.src = 'war of worlds.png';
-    }
-     function starWarsOpeningText(text, speed) {
-      const openingTextElement = document.getElementById('openingText');
-      openingTextElement.innerHTML = '';
-
-      let i = 0;
-
-      function addText() {
-        if (i < text.length) {
-          openingTextElement.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(addText, speed);
+    <script>
+        function changeImage(image) {
+            image.src = 'war of worlds.png';
         }
-      }
 
-      addText();
-    }
+        function starWarsOpeningText(text, speed) {
+            const openingTextElement = document.getElementById('openingText');
+            openingTextElement.innerHTML = '';
 
+            let i = 0;
 
-    const openingText = "A long time ago in a galaxy far, far away...(click on picture)";
-    const typingSpeed = 100; // Adjust speed as needed
+            function addText() {
+                if (i < text.length) {
+                    openingTextElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(addText, speed);
+                }
+            }
 
-    starWarsOpeningText(openingText, typingSpeed);
-    
+            addText();
+        }
 
-    function playAudio() {
-      // Get the audio element by its ID
-      const audioPlayer = document.getElementById('audioPlayer');
+        // Usage example
+        const openingText = "A long time ago in a galaxy far, far away...(click on picture)";
+        const typingSpeed = 100; // Adjust speed as needed
 
-      // Play the audio
-      audioPlayer.play();
-    }
+        starWarsOpeningText(openingText, typingSpeed);
 
-    function stopAudio() {
-      // Get the audio element by its ID
-      const audioPlayer = document.getElementById('audioPlayer');
+        function playAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
 
-      // Pause and reset the audio
-      audioPlayer.pause();
-      audioPlayer.currentTime = 0;
-    }
+            // Play the audio
+            audioPlayer.play();
+        }
 
-    // Get the image element by its ID
-    const clickableImage = document.getElementById('clickableImage');
+        function stopAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
 
-    // Attach the click event listener to play the audio
-    clickableImage.addEventListener('click', playAudio);
+            // Pause and reset the audio
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+        }
 
-    // Attach the double click event listener to stop the audio
-    clickableImage.addEventListener('dblclick', stopAudio);
-  </script>
+        // Get the image element by its ID
+        const clickableImage = document.getElementById('clickableImage');
+
+        // Attach the click event listener to play the audio
+        clickableImage.addEventListener('click', playAudio);
+
+        // Attach the double click event listener to stop the audio
+        clickableImage.addEventListener('dblclick', stopAudio);
+    </script>
 	
 </body>
 </html>
