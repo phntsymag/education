@@ -72,19 +72,25 @@
 
             let i = 0;
 
-            function addText() {
-                if (i < text.length) {
-                    openingTextElement.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(addText, speed);
-                }
-            }
+           function addText() {
+             if (i < text.length) {
+             openingTextElement.innerHTML += text.charAt(i);
+             i++;
+             setTimeout(addText, speed);
+            } else {
+            setTimeout(fadeOut, 1000); // Wait for 1 second before starting the fade out
+             }
+           }
+
+           function fadeOut() {
+            openingTextElement.style.opacity = 0;
+             }
 
             addText();
-        }
+         }
 
-        // Usage example
-        const openingText = "A long time ago in a galaxy far, far away...(click on picture)";
+
+        const openingText = "A long time ago in a galaxy far, far away...a war has begun";
         const typingSpeed = 100; // Adjust speed as needed
 
         starWarsOpeningText(openingText, typingSpeed);
