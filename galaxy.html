@@ -7,15 +7,14 @@
     <title>Galaxy</title>
 	<link rel = "icon" href = "favhappy.png" type = "image/x-icon">
     <style>
-	    html{
-		  	background-color: #193C54;
-			background-image: url("galaxy.jpeg");
-			background-size: 12px 52px;
+	html{
+	  	background-color: #193C54;
+		background-image: url("galaxy.jpeg");
+		background-size: 12px 52px;
 		}
-		body {
+	body {
         overflow: hidden;
         font-family: 'Arial', sans-serif;
-        background-color: black;
         color: yellow;
         margin: 0;
         }
@@ -34,9 +33,16 @@
 		top: 35%;
 		left: 25%
 		}
+	 .pagination {
+               text-align: center; /* Center the pagination links */
+               margin-top: 20px;  
+         }
     </style>
+	
 </head>
+	
 <body>
+	
 <div class="pagination">
   <a href="#">&laquo;</a>
   <a href="index.html">Home</a>
@@ -47,10 +53,15 @@
   <a href="chinese cookie.html">Happy cookie</a>
   <a href="#">&raquo;</a>
 </div>
- <div class="opening-text" id="openingText"></div>
+	
+<div class="opening-text" id="openingText"></div>
+	
 <img src="galaxy.jpeg" alt="galaxy" width="500" height="400" onclick="changeImage(this)" id="clickableImage">
+	
 <audio id="audioPlayer" src="darth.mp3"></audio>
- <div class="opening-text" id="openingText"></div>
+	
+
+	
    <script>
     function changeImage(image) {
         image.src = 'war of worlds.png';
@@ -72,14 +83,13 @@
       addText();
     }
 
-    // Usage example
+
     const openingText = "A long time ago in a galaxy far, far away...(click on picture)";
     const typingSpeed = 100; // Adjust speed as needed
 
     starWarsOpeningText(openingText, typingSpeed);
     
-    </script>
-  <script>
+
     function playAudio() {
       // Get the audio element by its ID
       const audioPlayer = document.getElementById('audioPlayer');
