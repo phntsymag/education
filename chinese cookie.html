@@ -54,9 +54,9 @@
   <a href="#">&raquo;</a>
 </div>
     <h1>Click a Cookie</h1>
-    <button id="button1" >Love</button>
-    <button id="button2" >Health</button>
-    <button id="button3" >Wealth</button>
+    <button >Love</button>
+    <button >Health</button>
+    <button >Wealth</button>
     <div id="message"></div>
     <img src="chinese cat.jpg" alt="pic" weight= 200px height= 200px class="center">
     <script>
@@ -90,21 +90,16 @@
             return happyCookieMessages[randomIndex];
         }
 
-        // Event listeners for each button
-        document.getElementById("button1").addEventListener("click", () => {
+       document.addEventListener("DOMContentLoaded", function() {
+    // Event listener for all buttons
+    document.querySelectorAll("button").forEach(function(button) {
+        button.addEventListener("click", function() {
             const message = getRandomMessage();
             document.getElementById("message").textContent = message;
         });
+    });
+});
 
-        document.getElementById("button2").addEventListener("click", () => {
-            const message = getRandomMessage();
-            document.getElementById("message").textContent = message;
-        });
-
-        document.getElementById("button3").addEventListener("click", () => {
-            const message = getRandomMessage();
-            document.getElementById("message").textContent = message;
-        });
     </script>
 </body>
 </html>
