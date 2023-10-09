@@ -7,12 +7,15 @@
     <title>Galaxy</title>
 	<link rel = "icon" href = "favgalaxy.png" type = "image/x-icon">
     <style>
-	    html{
-	  	background-color: black;
-			
+	   html {
+			background: url('galaxy.jpeg') no-repeat center center fixed;
+			background-size: cover;
+		}
+		@media only screen and (max-width: 600px) {
+			/* Styles for small screens go here */
 		}
 	body {
-        overflow: hidden;
+   
         font-family: 'Arial', sans-serif;
         color: yellow;
         margin: 0;
@@ -39,10 +42,10 @@
           margin-top: 20px;   /* Optional: Add some top margin for spacing */
 	  background-color: black;	  
          }
-	.center{
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		}
   </style>
 </head>
