@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy</title>
+	<link rel = "icon" href = "favgalaxy.png" type = "image/x-icon">
+    <style>
+	
+		html {
+			background-color: black;
+		}
+		@media only screen and (max-width: 600px) {
+			/* Styles for small screens go here */
+		}
+
+		body {
+  
+        font-family: 'Arial', sans-serif;
+        color: yellow;
+        margin: 0;
+        }
+
+      .opening-text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        font-size: 24px;
+		opacity: 0; /* Initial opacity set to 0 */
+        transition: opacity 2s ease-in-out;
+        }
+        
+        img {
+		position: absolute;
+		top: 35%;
+		left: 25%;
+		width: 35%; 
+		height:auto;
+		}
+		
+		.pagination {
+          text-align: center; /* Center the pagination links */
+          margin-top: 20px;   /* Optional: Add some top margin for spacing */
+		  
+         }
+		 .center{
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+		}
+		 
+    </style>
+</head>
+<body>
+
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="index.html">Home</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="CV.html">CV</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="astrology.html">Astrology</a>
+  <a href="chineseCookie.html">Fortune cookie</a>
+  <a href="#">&raquo;</a>
+</div>
+
+ <div class="opening-text" id="openingText"></div>
+ 
+<img src="spiralGalaxy.jpg" alt="galaxy" class="center" onclick="changeImage(this)" id="clickableImage">
+
+<audio id="audioPlayer" src="darth.mp3"></audio>
+ 
+    <script>
+        function changeImage(image) {
+            image.src = 'war of worlds.png' ;
+			
+        }
+
+        function starWarsOpeningText(text, speed) {
+			const openingTextElement = document.getElementById('openingText');
+			openingTextElement.innerHTML = '';
+			openingTextElement.style.opacity = 1;
+
+			let i = 0;
+
+			function addText() {
+				if (i < text.length) {
+				openingTextElement.innerHTML += text.charAt(i);
+				i++;
+				setTimeout(addText, speed);
+				} else {
+				setTimeout(fadeOut, 3000); // Wait for 1 second before starting the fade out
+			}
+		}
+
+      function fadeOut() {
+        openingTextElement.style.opacity = 0;
+      }
+
+      addText();
+     }
+
+        // Usage example
+        const openingText = "A long time ago in a galaxy far, far away...a war has begun...";
+        const typingSpeed = 100; // Adjust speed as needed
+
+        starWarsOpeningText(openingText, typingSpeed);
+
+        function playAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            // Play the audio
+            audioPlayer.play();
+        }
+
+        function stopAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            // Pause and reset the audio
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+        }
+
+        // Get the image element by its ID
+        const clickableImage = document.getElementById('clickableImage');
+
+        // Attach the click event listener to play the audio
+        clickableImage.addEventListener('click', playAudio);
+
+        // Attach the double click event listener to stop the audio
+        clickableImage.addEventListener('dblclick', stopAudio);
+    </script>
+	
+</body>
+</html>
