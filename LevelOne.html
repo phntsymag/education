@@ -60,8 +60,13 @@
      document.getElementById("movingObject").onclick = function() { 
             document.getElementById("movingObject").style.display = "none"; 
         } 
-</script>
 
+	function goBack() {
+      // Use the history object to navigate back
+      history.back();
+    }
+</script>
+<a href="javascript:history.back()">Back</a>
 </body>
 </html>
 
