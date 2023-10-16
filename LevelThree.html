@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3</title>
+    <style>
+        h1 {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Superquiz</h1>
+
+<div id="one">
+<p>1. What is the name of the planet where Leia was born?</p>
+<p>a) Alderaan, b) Polis Massa</p>
+
+<input type="button" id='button' value="Click me" onclick="Answer1()">
+</div>
+
+<div id="two">
+<p>2. What is the name of father of Luke?</p>
+<p>a) Anakin, b) Han </p>
+
+<input type="button" id='button' value="Click me" onclick="Answer2()">
+</div>
+
+<script>
+    function Answer1() {
+        var userInput = prompt("Enter your answer (a or b):");
+
+        if (userInput === "a") {
+            alert("Wrong answer");
+        } else if (userInput === "b") {
+            alert("You are right");
+        } else {
+            alert("Try again");
+        }
+    }
+	
+	 function Answer2() {
+        var userInput = prompt("Enter your answer (a or b):");
+
+        if (userInput === "a") {
+            alert("You are right");
+        } else if (userInput === "b") {
+            alert("Wrong answer");
+        } else {
+            alert("Try again");
+        }
+    }
+</script>
+<h2> Points - COUNT: </h2>
+
+</body>
+</html>
+
+</html>
