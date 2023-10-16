@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Level Two</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+	html{
+	background-color:black;
+	}
+	body {
+	margin: 0;
+	overflow: hidden;
+	}
+
+	.object {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+	}
+	
+	h1{
+	color:orange;
+	}
+	.button{
+	position:absolute;
+	left: 80%;
+	bottom:10%;
+	color: green;
+	}
+	p, .text{
+	color: red;
+	position:absolute;
+	left: 50%;
+	bottom:50%;
+	
+	}
+	</style
+  
+</head>
+<body>
+
+<h1>Click me!<h1>
+<p id="demo" ></p>
+
+
+
+    <img src="darth.jpg" class="object" id="movingObject" >
+	<img src="sidious.jfif" class="object" id="movingObject2" >
+	<img src="jabba.jfif" class="object" id="movingObject3" >
+	<img src="maul.jfif" class="object" id="movingObject4" >
+	
+    
+<script>
+    //first pic
+	document.addEventListener("DOMContentLoaded", function() {
+		const object = document.getElementById("movingObject");
+
+    function getRandomPosition() {
+        const maxX = window.innerWidth - object.clientWidth;
+        const maxY = window.innerHeight - object.clientHeight;
+        
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        return { x: randomX, y: randomY };
+    }
+
+    function moveObject() {
+        const newPosition = getRandomPosition();
+        object.style.left = newPosition.x + "px";
+        object.style.top = newPosition.y + "px";
+    }
+
+
+
+    // Move the object every second
+    setInterval(moveObject, 1000);
+	});
+	
+     document.getElementById("movingObject").onclick = function() { 
+            document.getElementById("movingObject").style.display = "none"; 
+			//alert("Enemy destroyed!");
+			document.getElementById("demo").innerHTML = "Enemy destroyed!";			
+			$("p").fadeIn().fadeOut();
+
+      
+        } 
+	//second pic	
+	document.addEventListener("DOMContentLoaded", function() {
+		const object = document.getElementById("movingObject2");
+
+    function getRandomPosition() {
+        const maxX = window.innerWidth - object.clientWidth;
+        const maxY = window.innerHeight - object.clientHeight;
+        
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        return { x: randomX, y: randomY };
+    }
+
+    function moveObject() {
+        const newPosition = getRandomPosition();
+        object.style.left = newPosition.x + "px";
+        object.style.top = newPosition.y + "px";
+    }
+
+
+
+    // Move the object every second
+    setInterval(moveObject, 900);
+	});
+	
+     document.getElementById("movingObject2").onclick = function() { 
+            document.getElementById("movingObject2").style.display = "none"; 
+			document.getElementById("demo").innerHTML = "Enemy destroyed!";			
+			$("p").fadeIn().fadeOut();
+        } 
+	// third pic
+	document.addEventListener("DOMContentLoaded", function() {
+		const object = document.getElementById("movingObject3");
+
+    function getRandomPosition() {
+        const maxX = window.innerWidth - object.clientWidth;
+        const maxY = window.innerHeight - object.clientHeight;
+        
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        return { x: randomX, y: randomY };
+    }
+
+    function moveObject() {
+        const newPosition = getRandomPosition();
+        object.style.left = newPosition.x + "px";
+        object.style.top = newPosition.y + "px";
+    }
+
+
+
+    // Move the object every second
+    setInterval(moveObject, 800);
+	});
+	
+     document.getElementById("movingObject3").onclick = function() { 
+            document.getElementById("movingObject3").style.display = "none"; 
+			document.getElementById("demo").innerHTML = "Enemy destroyed!";			
+			$("p").fadeIn().fadeOut();
+			
+        } 
+    //fourth pic
+	document.addEventListener("DOMContentLoaded", function() {
+		const object = document.getElementById("movingObject4");
+
+    function getRandomPosition() {
+        const maxX = window.innerWidth - object.clientWidth;
+        const maxY = window.innerHeight - object.clientHeight;
+        
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        return { x: randomX, y: randomY };
+    }
+
+    function moveObject() {
+        const newPosition = getRandomPosition();
+        object.style.left = newPosition.x + "px";
+        object.style.top = newPosition.y + "px";
+    }
+
+
+
+    // Move the object every second
+    setInterval(moveObject, 700);
+	});
+	
+     document.getElementById("movingObject4").onclick = function() { 
+            document.getElementById("movingObject4").style.display = "none"; 
+			document.getElementById("demo").innerHTML = "Enemy destroyed!";			
+			$("p").fadeIn().fadeOut();
+			
+        } 
+	
+	function goBack() {
+      // Use the history object to navigate back
+      history.back();
+	  
+	
+    }
+	
+</script>
+<a href="javascript:history.back()">Back</a>
+<a href="levelThree.html" class="button" >Level 3>>><a>
+</body>
+</html>
+
+
+
+
+
+
+
+
