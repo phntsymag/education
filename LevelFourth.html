@@ -14,54 +14,75 @@
             background-size: cover;
         }
 
-        .opening-text {
+        .text-element {
             position: absolute;
-            top: 20%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             white-space: nowrap;
-            font-size: 24px;
             opacity: 0; /* Initial opacity set to 0 */
             transition: opacity 2s ease-in-out;
-			color: red;
+        }
+
+        .opening-text {
+            top: 20%;
+            font-size: 42px;
+            color: red;
+        }
+
+        .ending-text {
+            top: 40%;
+            font-size: 36px;
+            color: red;
+        }
+
+        .last-text {
+            top: 60%;
+            font-size: 36px;
+            color: red;
         }
     </style>
 </head>
 
 <body>
     <h1>May the forth be with you!</h1>
-    <div class="opening-text" id="openingText"></div>
+    <div class="text-element opening-text" id="openingText"></div>
+    <div class="text-element ending-text" id="endingText"></div>
+    <div class="text-element last-text" id="lastText"></div>
 
     <script>
-        function starWarsOpeningText(text, speed) {
-            const openingTextElement = document.getElementById('openingText');
-            openingTextElement.innerHTML = '';
-            openingTextElement.style.opacity = 1;
+        const typingSpeed = 80; // Adjust speed as needed
+
+        function fadeInText(element, text, speed, delay) {
+            element.innerHTML = '';
+            element.style.opacity = 1;
 
             let i = 0;
 
             function addText() {
                 if (i < text.length) {
-                    openingTextElement.innerHTML += text.charAt(i);
+                    element.innerHTML += text.charAt(i);
                     i++;
                     setTimeout(addText, speed);
                 } else {
-                    setTimeout(fadeOut, 3000); // Wait for 1 second before starting the fade out
+                    setTimeout(() => {
+                        element.style.opacity = 0;
+                    }, 4000);
                 }
             }
 
-            function fadeOut() {
-                openingTextElement.style.opacity = 0;
-            }
-
-            addText();
+            setTimeout(() => {
+                addText();
+            }, delay);
         }
 
         // Usage example
-        const openingText = "In order to ensure the security and continuing stability, the Republic will be reorganized into the first Galactic Empire, for a safe and secure society!";
-        const typingSpeed = 100; // Adjust speed as needed
+        const openingText = "In order to ensure the security and continuing stability";
+        const endingText = "...the Republic will be reorganized into the first Galactic Empire...";
+        const lastText = "for a safe and secure society!";
 
-        starWarsOpeningText(openingText, typingSpeed);
+        fadeInText(document.getElementById('openingText'), openingText, typingSpeed, 0);
+        fadeInText(document.getElementById('endingText'), endingText, typingSpeed, 5000); // 5000 milliseconds delay
+        fadeInText(document.getElementById('lastText'), lastText, typingSpeed, 10000); // 10000 milliseconds delay
     </script>
 </body>
 
