@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The End</title>
+    <link rel="icon" href="favgalaxy.png" type="image/x-icon">
+    <style>
+        html {
+            background-color: #5272F2;
+            color: #FFCC70;
+            background: url('space.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .opening-text {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            font-size: 24px;
+            opacity: 0; /* Initial opacity set to 0 */
+            transition: opacity 2s ease-in-out;
+			color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>May the forth be with you!</h1>
+    <div class="opening-text" id="openingText"></div>
+
+    <script>
+        function starWarsOpeningText(text, speed) {
+            const openingTextElement = document.getElementById('openingText');
+            openingTextElement.innerHTML = '';
+            openingTextElement.style.opacity = 1;
+
+            let i = 0;
+
+            function addText() {
+                if (i < text.length) {
+                    openingTextElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(addText, speed);
+                } else {
+                    setTimeout(fadeOut, 3000); // Wait for 1 second before starting the fade out
+                }
+            }
+
+            function fadeOut() {
+                openingTextElement.style.opacity = 0;
+            }
+
+            addText();
+        }
+
+        // Usage example
+        const openingText = "In order to ensure the security and continuing stability, the Republic will be reorganized into the first Galactic Empire, for a safe and secure society!";
+        const typingSpeed = 100; // Adjust speed as needed
+
+        starWarsOpeningText(openingText, typingSpeed);
+    </script>
+</body>
+
+</html>
