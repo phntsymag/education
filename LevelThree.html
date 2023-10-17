@@ -3,59 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level 3</title>
+    <title>LevelThree</title>
     <style>
-        h1 {
-            display: flex;
-        }
+		html{
+		background-color: #5272F2;
+		color: #FFCC70;
+		background: url('space.jpeg') no-repeat center center fixed;
+			background-size: cover;
+		}
+		h1{
+		color: #EE9322;
+		text-shadow: 2px 2px #FF0000;
+		}
+        #result{
+		color: #EE9322;
+		position:absolute;
+		bottom: auto;
+		top:70%;
+		left: 50%;
+		right: auto;
+		font-size: 30px;
+		text-decoration: underline;
+		}
+		img{
+		position:absolute;
+		left: 50%;
+		bottom: 40%;
+		border-radius: 5%;
+		}
+		#submitbutton {
+		background-color: black;
+		color: white;
+		}
+		.button{
+		position:absolute;
+		left: 90%;
+		bottom:20%;
+		color: yellow;
+		}
     </style>
 </head>
 <body>
+    <h1>Star Wars Quiz</h1>
 
-<h1>Superquiz</h1>
+    <form id="quizForm">
+        <p>1. What is the name of the planet where Leia was born?</p>
+        <input type="radio" id="alderaan" name="question1" value="alderaan">
+        <label for="alderaan">Alderaan</label><br>
+        <input type="radio" id="polisMassa" name="question1" value="polisMassa">
+        <label for="polisMassa">Polis Massa</label><br>
+		
+		<p>2. Where did Obi-Wan take Luke after his birth?</p>
+        <input type="radio" id="tatooine" name="question2" value="tatooine">
+        <label for="alderaan">Tatooine</label><br>
+        <input type="radio" id="wobani" name="question2" value="wobani">
+        <label for="polisMassa">Wobani</label><br>
 
-<div id="one">
-<p>1. What is the name of the planet where Leia was born?</p>
-<p>a) Alderaan, b) Polis Massa</p>
+        <p>3. What year did the first Star Wars movie come out?</p>
+        <input type="radio" id="1975" name="question3" value="1975">
+        <label for="alderaan">1975</label><br>
+        <input type="radio" id="1977" name="question3" value="1977">
+        <label for="polisMassa">1977</label><br>
+		
+		<p>4. What is the episode number of the very first Star Wars film?</p>
+        <input type="radio" id="one" name="question4" value="one">
+        <label for="alderaan">One</label><br>
+        <input type="radio" id="four" name="question4" value="four">
+        <label for="polisMassa">Four</label><br>
+		
+		<p>5. Where was Yoda's home in his final years?</p>
+        <input type="radio" id="dagobah" name="question5" value="dagobah">
+        <label for="alderaan">Dagobah</label><br>
+        <input type="radio" id="alderaan" name="question5" value="alderaan">
+        <label for="polisMassa">Alderaan</label><br>
+		
+		<!-- Add more questions as needed -->
+		<br>
+        <input id="submitbutton" type="submit" value="Show results">
+    </form>
+	<br>
+    <div id="result"></div>
+	<img src="yoda.jpg" id="clickableImage" onclick="">
+	<audio id="audioPlayer" src="yodaTheme.mp3"></audio>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting
 
-<input type="button" id='button' value="Click me" onclick="Answer1()">
-</div>
+            // Define the correct answers
+            const correctAnswers = {
+                question1: 'polisMassa',
+				question2: 'tatooine',
+				question3: '1977',
+				question4: 'four',
+				question5: 'dagobah',
+                // Add more correct answers as needed
+            };
 
-<div id="two">
-<p>2. What is the name of father of Luke?</p>
-<p>a) Anakin, b) Han </p>
+            let score = 0;
 
-<input type="button" id='button' value="Click me" onclick="Answer2()">
-</div>
+            // Check each question
+            for (const question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
 
-<script>
-    function Answer1() {
-        var userInput = prompt("Enter your answer (a or b):");
+                if (selectedAnswer) {
+                    const userAnswer = selectedAnswer.value;
 
-        if (userInput === "a") {
-            alert("Wrong answer");
-        } else if (userInput === "b") {
-            alert("You are right");
-        } else {
-            alert("Try again");
+                    // Check if the answer is correct
+                    if (userAnswer === correctAnswers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            // Display the result
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = `Your score is: ${score} out of ${Object.keys(correctAnswers).length}!`;
+        });
+		
+		//play music by clicking on picture
+		   function playAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            // Play the audio
+            audioPlayer.play();
         }
-    }
-	
-	 function Answer2() {
-        var userInput = prompt("Enter your answer (a or b):");
 
-        if (userInput === "a") {
-            alert("You are right");
-        } else if (userInput === "b") {
-            alert("Wrong answer");
-        } else {
-            alert("Try again");
+        function stopAudio() {
+            // Get the audio element by its ID
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            // Pause and reset the audio
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
         }
-    }
-</script>
-<h2> Points - COUNT: </h2>
+		   // Get the image element by its ID
+        const clickableImage = document.getElementById('clickableImage');
 
+        // Attach the click event listener to play the audio
+        clickableImage.addEventListener('click', playAudio);
+
+        // Attach the double click event listener to stop the audio
+        clickableImage.addEventListener('dblclick', stopAudio);
+		
+		
+    </script>
+	<a href="LevelFourth.html" class="button" >Level 4>>><a>
 </body>
-</html>
-
 </html>
